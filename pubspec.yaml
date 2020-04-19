@@ -29,6 +29,8 @@ dependencies:
   toast:
   flutter_staggered_grid_view:
   azlistview:
+  underline_indicator:
+  lpinyin:
 
 dev_dependencies:
   flutter_test:
