@@ -7,6 +7,8 @@ import 'package:mytrip/model/home_module.dart';
 import 'package:mytrip/model/local_nav_list_module.dart';
 import 'package:mytrip/model/sub_nav_list_module.dart';
 import 'package:mytrip/model/sales_box_module.dart';
+import 'package:mytrip/pages/search_page.dart';
+import 'package:mytrip/pages/speak_page.dart';
 import 'package:mytrip/widget/grid_nav.dart';
 import 'package:mytrip/widget/loading_container.dart';
 import 'package:mytrip/widget/search_bar.dart';
@@ -147,11 +149,18 @@ class _AppBarWidgetState extends State<AppBarWidget> {
               ? SearchBarType.homeLight
               : SearchBarType.home,
               inputBoxClick: () {
-
+                Navigator.push(context,
+                MaterialPageRoute(builder: (context) => SearchPage(
+                  hideLeft: false,
+                  hint: SEARCH_BAR_DEFAULT_TEXT,
+                )));
               },
+
               speakClick: () {
-
+                Navigator.push(context,
+                    MaterialPageRoute(builder: (context) => SpeakPage()));
               },
+
               defaultText: SEARCH_BAR_DEFAULT_TEXT,
               city: _currentCity,
               leftButtonOnClick: () {

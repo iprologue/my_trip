@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:mytrip/pages/home_page.dart';
 import 'package:mytrip/pages/my_page.dart';
-import 'package:mytrip/pages/search_page.dart';
+import 'package:mytrip/pages/speak_page.dart';
 import 'package:mytrip/pages/travel_page.dart';
 
 
@@ -34,7 +34,7 @@ class _TabNavigatorState extends State<TabNavigator>{
         physics: NeverScrollableScrollPhysics(),
         children: <Widget>[
           HomePage(),
-          SearchPage(),
+          SpeakPage(isFromMainPage: true,),
           TravelPage(),
           MyPage(),
         ],
