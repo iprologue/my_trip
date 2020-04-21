@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:mytrip/widget/web_view_widget.dart';
 
+const String MY_URL = 'https://m.ctrip.com/webapp/myctrip/';
 
 class MyPage extends StatefulWidget{
   @override
@@ -7,15 +9,20 @@ class MyPage extends StatefulWidget{
 
 }
 
-class _MyPageState extends State<MyPage>{
+class _MyPageState extends State<MyPage> with AutomaticKeepAliveClientMixin{
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: Center(
-        child: Text("我的"),
-      ),
+    return WebViewWidget(
+      url: MY_URL,
+      hideAppBar: true,
+      backForbid: true,
+      statusBarColor: '4c5bca',
+      isMyPage: true,
     );
   }
+
+  @override
+  bool get wantKeepAlive => true;
 
 }
