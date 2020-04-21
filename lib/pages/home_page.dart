@@ -7,6 +7,7 @@ import 'package:mytrip/model/home_module.dart';
 import 'package:mytrip/model/local_nav_list_module.dart';
 import 'package:mytrip/model/sub_nav_list_module.dart';
 import 'package:mytrip/model/sales_box_module.dart';
+import 'package:mytrip/pages/city_page.dart';
 import 'package:mytrip/pages/search_page.dart';
 import 'package:mytrip/pages/speak_page.dart';
 import 'package:mytrip/widget/grid_nav.dart';
@@ -179,10 +180,18 @@ class _AppBarWidgetState extends State<AppBarWidget> {
   }
 
   void _jumpToCity(BuildContext context) async {
-
+    final String result = await Navigator.push(context,
+        MaterialPageRoute(builder: (context) => CityPage()
+    ));
+    if (result != null) {
+      setState(() {
+        _currentCity = result;
+      });
+    }
   }
 
 }
+
 
 class AuthorSignWidget extends StatelessWidget {
   const AuthorSignWidget({
